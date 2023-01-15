@@ -27,7 +27,7 @@ class Menu :
             self.app.cetak()
         else :
             pass
-
+        
     def validation(self, nama_item, jumlah_item, harga_item) :
         try :
             self.app.add_item(nama_item, jumlah_item, harga_item)
