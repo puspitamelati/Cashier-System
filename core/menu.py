@@ -2,6 +2,9 @@ from core.app import App
 from termcolor import colored
 
 class Menu :
+    '''
+    kelas menu terdiri dari beberapa fitur yang akan dijalankan sesuai dengan input dari user 
+    '''
     def __init__(self) :
         self.app = App()
     
