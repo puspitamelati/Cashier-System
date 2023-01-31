@@ -7,9 +7,20 @@ class Menu :
 
     attributes
     ----------
+        nama_item : str
+                nama item belanja dari input nama_item di fungsi get_menu() kelas Menu()
+        jumlah_item : int
+                jumlah item belanja dari input jumlah_item di fungsi get_menu() kelas Menu()
+        harga_item : int
+                harga item belanja dari input harga_item di fungsi get_menu kelas Menu()
 
     methods
     -------
+        get_menu(user)
+            pilihan fitur yang disesuaikan dengan input dari user
+
+        validation (nama_item, jumlah_item, harga_item)
+            memvalidasi input yang dimasukkan user
 
     '''
     def __init__(self) :
