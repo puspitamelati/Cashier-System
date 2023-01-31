@@ -47,7 +47,7 @@ class Transaction :
 
         '''
 
-        print('\n1.Add Item\n2. Update Item Name\n3. Update Item Quantity\n4. Update Item Harga\n5.pesanan')
+        print('\n1. Add Item\n2. Update Item Name\n3. Update Item Quantity\n4. Update Item Harga\n5. Delete Item\n6. Reset Item\n7. Print Orders')
         user = input('Choose your transaction :')
         print('////////////////////////////////')
         self.menu.get_menu(user)

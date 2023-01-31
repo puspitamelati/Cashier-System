@@ -67,6 +67,11 @@ class Menu :
             update_harga = input('update harga item:\n')
             self.app.update_item_harga(nama_item, update_harga)
         elif user == '5' :
+            nama_item = input('nama item :\n')
+            self.app.del_item(nama_item)
+        elif user == '6' :
+            self.app.reset_item()
+        elif user == '7' :
             self.app.cetak()
         else :
             pass
