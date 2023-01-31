@@ -124,6 +124,18 @@ class App :
             if i['item'] == nama_item :
                 i['harga'] = int(update_harga)
     
+    def del_item (self, nama_item) :
+         for i in range(len(self.transactions)) :
+            if self.transactions[i]['item'] == nama_item :
+                del self.transactions[i]
+            else :
+                pass
+
+
+    def reset_item(self) :
+        for i in range(len(self.transactions)) :
+            del self.transactions[i]
+
     def cetak (self) :
         '''
         mencetak semua transaksi yang sudah dibuat
@@ -140,20 +152,28 @@ class App :
                 total harga yang harus dibayar
         '''
         df = pd.DataFrame(self.transactions)
-        df['total harga'] = df['jumlah'] * df['harga']
         
-        total = sum(df["total harga"])
-        total_belanja = sum(df["total harga"])
+        try :
+            df['total harga'] = df['jumlah'] * df['harga']
+            total = sum(df["total harga"])
+            total_belanja = sum(df["total harga"])
         
-        if total_belanja > 200000 :
-            total_belanja = total_belanja*0.95
-        elif total_belanja > 300000 :
-            total_belanja = total_belanja*0.92
-        elif total_belanja > 500000 :
-            total_belanja = total_belanja*0.9
-        else :
-            pass
+            if total_belanja > 200000 :
+                total_belanja = total_belanja*0.95
+            elif total_belanja > 300000 :
+                total_belanja = total_belanja*0.92
+            elif total_belanja > 500000 :
+                total_belanja = total_belanja*0.9
+            else :
+                pass
         
-        print(df)
-        print(colored(f'\ntotal belanjaan anda : {total}',attrs=['bold']))
-        print(colored(f'total yang harus dibayar : {total_belanja}',attrs=['bold']))
+            print(df)
+            print(colored(f'\ntotal belanjaan anda : {total}',attrs=['bold']))
+            print(colored(f'total yang harus dibayar : {total_belanja}',attrs=['bold']))
+        
+        except KeyError:
+            print('Semua Item berhasil di delete! Tidak ada item belanja')
+       
+
+        
+       
